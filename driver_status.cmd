@@ -1,0 +1,2 @@
+sc query Tuersteher
+pause

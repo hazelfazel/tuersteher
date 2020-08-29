@@ -1,0 +1,110 @@
+
+  ___________                            __         .__                    
+  \__    ___/_ __   ___________  _______/  |_  ____ |  |__   ___________   
+    |    | |  |  \_/ __ \_  __ \/  ___/\   __\/ __ \|  |  \_/ __ \_  __ \  
+    |    | |  |  /\  ___/|  | \/\___ \  |  | \  ___/|   Y  \  ___/|  | \/  
+    |____| |____/  \___  >__|  /____  > |__|  \___  >___|  /\___  >__|     
+                       \/           \/            \/     \/     \/         
+                   Copyright 2011 - 2020 by F. Rienhardt        
+
+
+Software License Terms
+======================
+
+These license terms are an agreement between HazelFazel and you. They apply to all files provided through https://github.com/hazelfazel/tuersteher. From now on, the collection of such files refers to “SOFTWARE”. These terms and conditions also apply to all updates, patches, additions and support services for the SOFTWARE. This agreement, and any individual written and signed supplements which you may have agreed with HazelFazel, are to be the entire agreement and terms for the SOFTWARE.
+
+BY USING THE SOFTWARE, YOU ACCEPT THESE TERMS. IF YOU DO NOT ACCEPT THEM, YOU MAY NOT USE THE SOFTWARE.
+
+If you comply with these terms, you have the following rights.
+
+
+Installation and User Rights
+============================
+
+You may install and use any number of copies of SOFTWARE on your devices.
+
+
+Scope of the License
+====================
+
+The SOFTWARE is licensed, not sold to you. This agreement only gives you some non-exclusive rights to use the SOFTWARE.
+
+Unless applicable law grants you more rights despite this limitation, you may use SOFTWARE only as expressly permitted herein. In doing so, you must comply with all technical restrictions in SOFTWARE which only allow you to use the SOFTWARE in a specific way:
+
+- you may not remove logos, copyright information of the SOFTWARE;
+- you may not reverse engineer, decompile or disassemble the SOFTWARE or distribute the SOFTWARE in any form, except and only to the extent that applicable law expressly permits such use despite this limitation;
+- you may not use the SOFTWARE to harm others’ and their devices in any form;
+- you may not (re)publish or recompile the SOFTWARE for others to copy;
+- sell, rent, lease or loan the SOFTWARE;
+- transfer the SOFTWARE or this agreement to a third party; or
+- to use the SOFTWARE for and in any commercial services and environments.
+
+
+Privacy and Sensitive Information
+=================================
+
+Like other debugging tools that collect operating system information, (log-)files created with and by the SOFTWARE may contain personally identifiable or other sensitive information, such as (user-)names, passwords, paths to files being accessed, etc. By using SOFTWARE, you acknowledge that you are aware of this and take sole responsibility for such sensitive information. You respect the rights of third parties, especially their privacy.
+
+
+Documentation
+=============
+
+You may copy and use the documentation of the SOFTWARE for your internal, non-commercial reference purposes.
+
+
+Export Restrictions
+===================
+
+The SOFTWARE may be subject to export laws and regulations. You must comply with all national and international export laws and regulations that may apply to the SOFTWARE. These laws may include restrictions on destination, end users and the use of SOFTWARE and its components. It is up to you, to comply herein.
+
+
+Support Services
+================
+
+The SOFTWARE is provided to you “as is”. HazelFazel may not provide any support services.
+
+
+Applicable Law
+==============
+
+Germany. If you have acquired the Software in Germany, the state law of North Rhine-Westphalia, City of Bonn shall govern the interpretation of this Agreement and shall apply to claims for breach of contract, notwithstanding the principles of conflict of laws.
+
+Outside Germany. If you acquired the Software in another country, the laws of that country may apply.
+
+
+Legal validity
+==============
+
+You may have other rights under the laws of your country. You may also have rights in relation to the party from whom you acquired the SOFTWARE. This agreement does not change your rights under the laws of your country, if the laws of your country do not allow it.
+
+
+Copyright
+=========
+
+All title and copyrights in and to the SOFTWARE and any copies thereof are owned by HazelFazel, (F. Rienhardt), Excubits UG (haftungsbeschränkt), or its suppliers. All trade marks, title and intellectual property rights in and to the content which may be accessed through use of SOFTWARE is property of their original owners and may be protected by copyright and other intellectual property laws and treaties.
+
+
+Disclaimer of Warranty
+======================
+
+The SOFTWARE is licensed on an “as is” basis. You bear the risk of use. HazelFazel makes no express warranties, representations or conditions. You may have additional consumer rights under the local laws of your country which cannot be changed by this agreement. To the extent permitted by the laws of your country, HazelFazel excludes the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
+
+
+Limitation on and Exclusion of Remedies and Damages
+===================================================
+
+You may not claim any direct or other damages, including consequential damages, lost profits, special, indirect or incidental damages.
+
+This limitation applies to
+
+- anything related to the SOFTWARE, services, content (including code) on third party sites, software or programs; and
+- claims for breach of contract, breach of warranty, guarantee or condition, strict liability, negligence or other tortuous acts to the extent permitted by applicable law.
+
+It also applies, if HazelFazel knew or should have known of the possibility of damages. The above limitation or exclusion may not apply to you because your country may not allow the exclusion or limitation of incidental, consequential or other damages.
+
+
+Contact
+=======
+
+You may contact HazelFazel via Email to hazelfazel@bitnuts.de (! PLEASE NO SUPPORT INQUIRIES !)
+
