@@ -10,6 +10,10 @@ Türsteher is just a kernel driver without any additional bulk. Türsteher has a
 
 Türsteher and its components is licensed and provided “as is”. You bear the risk of use. We do not express any warranties, representations or conditions. You may not claim any direct or other damages, including consequential damages, lost profits, special, indirect or incidental damages. Consider yourself warned and informed.
 
+<h2>Target Audience</h2>
+
+IT- and Security Professionals. You should know about the Windows OS, its architecture, current malware attack strategies and how to defeat them.
+
 <h2>How to Setup Türsteher</h2>
 
 Before you can install and run the driver, you shall setup a configuration file for Türsteher. The configuration of Türsteher is located in C:\Windows\Tursteher.ini. The file shall be in Unicode format. The specified rules are *not* case-sensitive. In addition, Türsteher also support wildcards. You can use these to generalise rules. For example, you can use *.scr to define that all files with extension .scr should be blocked. Türsteher recognises the star * for any number of characters and the question mark ? for exactly one character. After each change of tuersteher.ini, the driver must be restarted. The first rule fitting the best, is the rule that is taken. You shall always put the most important rule on a higher position in the tuersteher.ini.
@@ -140,7 +144,7 @@ Please note: Silent rules can only be specified in the blacklist areas [BLACKLIS
 
 Türsteher also supports conditional rules for parent processes in the [WHITELIST] and [BLACKLIST]. There are programs that start subprograms as required after starting the main program. We call the main program the parent process, the subprograms child processes. The fact that parent processes start subprograms, i.e. child processes, is necessary and useful for programs such as the Explorer. But hackers use this technique to execute their evil executables through media players, browsers or office applications. For example, a Word document contains a macro which forces Word to download and execute a cryptolocker. With parentchecking Türsteher can block such attacks.
 
-During parentchecking, Türsteher checks which parent processes wants to start some executable before executing the child process. If the corresponding parent process is on the whitelist, the child process is allowed to start, otherwise it will be blocked. For example, you can define that Word or a PDF reader may not execute processes, shell codes, runtime libraries or drivers (.dll, .sys, .ocx, .drv, .cpl).
+During parentchecking, Türsteher checks which parent processes wants to start the executable before starting the child process. If the corresponding parent is on the whitelist, the child is allowed to start, otherwise it will be blocked. For example, you can define that your Mailclient or Wordprocessor cannot execute processes, shell codes, runtime libraries or drivers (.dll, .sys, .ocx, .drv, .cpl). This can help to mitigate against a whole bunch of attack vectors if you specify the rules tight.
 
 The rules for parent checking have the following general format: 
 Parent>Child
