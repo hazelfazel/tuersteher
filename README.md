@@ -16,6 +16,7 @@ Before you can install and run the driver, you shall setup a configuration file 
 
 Here we have an example of a basic tuersteher.ini file:
 
+<pre>
 [#INSTALLMODE]
 [#LETHAL]
 [LOGGING]
@@ -37,6 +38,7 @@ C:\Program Files (x86)\Internet Explorer\iexplore.exe
 [CMDBLACKLIST]
 *explorer.exe>*wscript.exe*
 [EOF]
+</pre>
 
 <h3>Using the hashtag (#)</h3>
 The hashtag (#) means switched off or comment a line out. To disable an option use use # within the brackets [# ...], e.g. [#LETHAL]. To disable a rule just specify # at the beginning of a line like #C:\Users\Test\*.exe.
@@ -59,17 +61,21 @@ The Admin-bypass feature allows you to bypass system and admin processes. This h
 
 <h3>Configure Whitelist</h3>
 
+<pre>
 [WHITELIST]
 C:\Windows\*
 C:\Program Files\*
 C:\Program Files (x86)\*
 C:\ProgramData\*
+</pre>
 
 Below the entry [WHITELIST] you shall specify all paths from which executables are allowed to be started. Here you should define at least the file paths that are absolutely necessary for the operation of Windows and the programs you have installed, i.e. in particular all paths (or files) required by the Windows operating system. Usually these are:
 
+<pre>
 C:\Windows\*
 C:\Program Files\*
 C:\ProgramData\Microsoft\*
+</pre>
 
 If you are using a 64-bit version of Windows, you will also find the path for installed 32-bit programs:
 C:\Program Files (x86)\*
@@ -77,11 +83,12 @@ Make sure that you end each rule with the * symbol. The star symbol serves as wi
 
 <h4>Add trusted executables to the whitelist</h4>
 
-If you have installed additional  executables in other directories than C:\Program Files\, you need to add them onto the whitelist.
+If you have installed additional  executables in other directories than C:\Program Files\, you need to add them onto the whitelist. For example:
 
-For example:
+<pre>
 D:\PortableApps\VeraCrypt\*
 D:\PortableApps\Gimp\*
+</pre>
 
 In addition to path specifications, you can also enter individual  executables in the whitelist. To do so, write the complete path with the file name and its extension in one line.
 
@@ -89,20 +96,25 @@ In addition to path specifications, you can also enter individual  executables i
 
 Priority rules are rules, that can overwrite any other rules, whether they are on the white- or blacklist. Although Türsteher supports a very powerful rules mechanism, priority rules provide more flexibility. Priority rules can help to reduce the number of specific rules for example by just blacklisting a whole directory and whitelisting specific executables you would like to allow. For example, we recommend blacklisting the path C:\Windows\Temp\*. All programs that are in this directory can no longer be started. However, it can happen that certain update programs and installers want to execute their processes in this folder. A priority rule can solve this problem. To do this, we give the desired rule a higher priority in the [WHITELIST] with an exclamation mark. The rule in the whitelist now overrides the rule in the blacklist. Let's assume that the desired update is AVUpdater.exe. Then the rules are as follows:
 
+<pre>
 [WHITELIST]
 !C:\Windows\Temp\AVUpdater.exe
 [BLACKLIST]
 C:\Windows\Temp\*
+</pre>
+
 Priority rules are supported in the white- and blacklist, also for the command line check option. Please note: Rules with a higher priority must be in first order.
 
 <h3>Configure the Blacklist</h3>
 
 Below the entry [BLACKLIST] you define all paths from which no program code is allowed to be started. Programs on this list are automatically blocked. Suppose a security hole has been discovered in Microsoft Browser Internet Explorer and there is no update for this vulnerability yet. With just some line in the blacklist you can avoid running untrusted or exploitable applications or libraries. Once the vulnerability has been patched you can simply remove the rules, use the application again.
 
+<pre>
 [BLACKLIST]
 C:\Windows\System32\msiexec.exe
 C:\Program Files\Internet Explorer\iexplore.exe
 C:\Program Files (x86)\Internet Explorer\iexplore.exe
+</pre>
 
 Suggestion:  Instead of an entire directory, it may also be appropriate to disable certain files, such as a vulnerable DLL to a plug-in, for example, if they are at risk due to a security breach. It is often the case that certain libraries or plug-ins are vulnerable to attacks. Cyber criminals use exploits to trigger the security breach in such libraries/plug-ins to infect your computer. If you block the vulnerable library or plug-in using Türsteher’s blacklist, they can no longer be exploited. After the libraries or plug-ins have been updated, you can remove the rule from the blacklist and use them again.
 
@@ -115,8 +127,10 @@ For example: If you would like to blacklist a Windows’ core library or driver 
 
 A simple silent rule is shown here:
 
+<pre>
 [BLACKLIST]
 $*notepad.exe
+</pre>
 
 This example rule defines that notepad.exe should be blocked and that no log entry should be written to the log file. If Notepad is getting started, it will be blocked by Türsteher without any event logged.
 
@@ -135,7 +149,10 @@ Please note: A path- or filename is separated by the > symbol. No spaces are all
 <h3>End of configuration</h3>
 
 The configuration file shall always end with the following line:
+
+<pre>
 [EOF]
+</pre>
 
 Please note that Türsteher does not accept the configuration file and does not load the driver if it is not completed with [EOF].
 
