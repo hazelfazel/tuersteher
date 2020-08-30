@@ -193,7 +193,7 @@ Lorem ipsum...
 E-mail me via HazelFazel <nospam>(at)</nospam> bitnuts.de
 
 <ul>
-  <li>If you find bugs, have constructive suggestions contact me</li>
+  <li>If you find bugs, have constructive suggestions contact me.</li>
   <li>If you would like to request for additional pro service support or consulting, please contact me. I will only answer requests coming from real existing professionals or organisations. Do not waste my time with phony or cheeky requests.</li>
   <li>I only reply to E-mails I am interested in.</li>
 </ul>
