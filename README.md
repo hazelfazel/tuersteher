@@ -111,22 +111,6 @@ Suggestion:  Instead of an entire directory, it may also be appropriate to disab
 
 Please note: Disabling drivers, libraries or plug-ins sometimes result in stopping the application or system from working properly. Hence, before disabling any executable you shall always test the behaviours and be careful with what you disable. We heavily encourage you to do some testing on demo or test machines, before deploying any updated Türsteher blacklist rules to a production line computer system.
 
-<h3>Silent Rules</h3>
-Silent Rules allow you to block events which you do not want showing up in the logs. So, with Silent Rules you are able to calm down annoying alerts you cannot get rid of, because e.g. the operating system's core automatically triggers them without any chance to block them.
-
-For example: If you would like to blacklist a Windows’ core library or driver that cannot be removed via the system’s configuration, and thus causing “harmless” alerts each and every time the operating systems tries to launch it. There is no way to avoid such attempts, but with Silent Rules you are able to calm them down. Just specify the $ character before a blacklist rule and it will not show up in the logs.
-
-A simple silent rule is shown here:
-
-<pre>
-[BLACKLIST]
-$*notepad.exe
-</pre>
-
-This example rule defines that notepad.exe should be blocked and that no log entry should be written to the log file. If Notepad is getting started, it will be blocked by Türsteher without any event logged.
-
-Please note: Silent rules can only be specified in the blacklist areas [BLACKLIST] and [CMDBLACKLIST].
-
 <h3>Command Line Checking</h3>
 
 In addition Türsteher also support Command Line Checking. This option is beyond traditional Application White-/Blacklisting and gives you even more control. We suggest that you turn Türsteher into [#LETHAL] mode and have a look into the log while [CMDCHECK] is enabled. The configuration heavily depends on your requirements, so it is hard to give advice here. Just try it out. Türsteher provides a White- and Blacklist for Command Line Checking. You shall specify them at [CMDWHITELIST] and [CMDBLACKLIST].
@@ -154,6 +138,22 @@ The rules for parent checking have the following general format:
 Parent>Child
 Please note: A path- or filename is separated by the > symbol. No spaces are allowed in between.
 
+<h3>Silent Rules</h3>
+Silent Rules allow you to block events which you do not want showing up in the logs. So, with Silent Rules you are able to calm down annoying alerts you cannot get rid of, because e.g. the operating system's core automatically triggers them without any chance to block them.
+
+For example: If you would like to blacklist a Windows’ core library or driver that cannot be removed via the system’s configuration, and thus causing “harmless” alerts each and every time the operating systems tries to launch it. There is no way to avoid such attempts, but with Silent Rules you are able to calm them down. Just specify the $ character before a blacklist rule and it will not show up in the logs.
+
+A simple silent rule is shown here:
+
+<pre>
+[BLACKLIST]
+$*notepad.exe
+</pre>
+
+This example rule defines that notepad.exe should be blocked and that no log entry should be written to the log file. If Notepad is getting started, it will be blocked by Türsteher without any event logged.
+
+Please note: Silent rules can only be specified in the blacklist areas [BLACKLIST] and [CMDBLACKLIST].
+
 <h3>End of configuration</h3>
 
 The configuration file shall always end with the following line:
@@ -166,11 +166,11 @@ Please note that Türsteher does not accept the configuration file and does not 
 
 <h2>Install the Türsteher Driver (türsteher.sys)</h2>
 
-Make use of the driver_install.cmd script. If you want to install the driver manually first read the EULA and accept it. Then check the driver_install.cmd script for more details.
+Make use of the driver_install.cmd script. If you want to install the driver manually first read the EULA and accept it. Then check the driver_install.cmd script for more details. Before you can start Türsteher you shall specify a proper tuersteher.ini in C:\Windows\. Without that .ini the driver will not load.
 
 <h3>Anti-Virus Warnings</h3>
 
-Maybe the browser or your below average AV warns you when you download Türsteher. This is a false-positive. We have been struggling to remove Türsteher from the blacklist of well known below average AV products. In many cases without success. Türsteher is no malware. Türsteher is no rootkit. Türsteher is not dangerous. It is just that below average AV companies that seem to dislike us. More and more serious IT magazines and IT Pros already postulate: If you use MS Defender you are very well protected. We say: If you supplement MS Defender with Application Whitelisting (like AppLocker or Türsteher), you are well prepared without any annual subscription fees. So what could be the cause for blocking Türsteher ....... hmmmmm ....... we don’t know ....... very difficult to imagine ....... 😉
+Maybe your browser or your AV warns you when you download Türsteher or its components. This is a false-positive. We have been struggling to remove Türsteher from the blacklist of well known below average AV products. In many cases without success. Türsteher is no malware. Türsteher is no rootkit. Türsteher is not dangerous. It is just that below average AV companies that seem to dislike us. Why? Well, more and more serious IT magazines and IT Pros already postulate: If you use MS Defender you are very well protected. We say: If you supplement MS Defender with Application Whitelisting (like AppLocker or Türsteher), you are even better prepared. We all know that traditional AV vendors sturrgle on sells and no longer have high margins, so ask yourself, what could be the cause for blocking other's solutions ....... hmmmmm ....... we don’t know ....... very difficult to imagine ....... 😉
 
 <h2>Additional Services (may require a formal agreement, NDA)</h2>
 <ul>
