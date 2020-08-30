@@ -36,7 +36,7 @@ C:\ProgramData\Microsoft\*
 C:\Windows\System32\msiexec.exe
 C:\Program Files\Internet Explorer\iexplore.exe
 C:\Program Files (x86)\Internet Explorer\iexplore.exe
-[CMDWHITE-LIST]
+[CMDWHITELIST]
 !*explorer.exe>*wscript.exe*C:\Firmenskripte\*
 *>*
 [CMDBLACKLIST]
@@ -96,19 +96,6 @@ D:\PortableApps\Gimp\*
 
 In addition to path specifications, you can also enter individual  executables in the whitelist. To do so, write the complete path with the file name and its extension in one line.
 
-<h3>Priority Rules</h3>
-
-Priority rules are rules, that can overwrite any other rules, whether they are on the white- or blacklist. Although Türsteher supports a very powerful rules mechanism, priority rules provide more flexibility. Priority rules can help to reduce the number of specific rules for example by just blacklisting a whole directory and whitelisting specific executables you would like to allow. For example, we recommend blacklisting the path C:\Windows\Temp\*. All programs that are in this directory can no longer be started. However, it can happen that certain update programs and installers want to execute their processes in this folder. A priority rule can solve this problem. To do this, we give the desired rule a higher priority in the [WHITELIST] with an exclamation mark. The rule in the whitelist now overrides the rule in the blacklist. Let's assume that the desired update is AVUpdater.exe. Then the rules are as follows:
-
-<pre>
-[WHITELIST]
-!C:\Windows\Temp\AVUpdater.exe
-[BLACKLIST]
-C:\Windows\Temp\*
-</pre>
-
-Priority rules are supported in the white- and blacklist, also for the command line check option. Please note: Rules with a higher priority must be in first order.
-
 <h3>Configure the Blacklist</h3>
 
 Below the entry [BLACKLIST] you define all paths from which no program code is allowed to be started. Programs on this list are automatically blocked. Suppose a security hole has been discovered in Microsoft Browser Internet Explorer and there is no update for this vulnerability yet. With just some line in the blacklist you can avoid running untrusted or exploitable applications or libraries. Once the vulnerability has been patched you can simply remove the rules, use the application again.
@@ -139,6 +126,23 @@ $*notepad.exe
 This example rule defines that notepad.exe should be blocked and that no log entry should be written to the log file. If Notepad is getting started, it will be blocked by Türsteher without any event logged.
 
 Please note: Silent rules can only be specified in the blacklist areas [BLACKLIST] and [CMDBLACKLIST].
+
+<h3>Command Line Checking</h3>
+
+In addition Türsteher also support Command Line Checking. This option is beyond traditional Application White-/Blacklisting and gives you even more control. We suggest that you turn Türsteher into [#LETHAL] mode and have a look into the log while [CMDCHECK] is enabled. The configuration heavily depends on your requirements, so it is hard to give advice here. Just try it out. Türsteher provides a White- and Blacklist for Command Line Checking. You shall specify them at [CMDWHITELIST] and [CMDBLACKLIST].
+
+<h3>Priority Rules</h3>
+
+Priority rules are rules, that can overwrite any other rules, whether they are on the white- or blacklist. Although Türsteher supports a very powerful rules mechanism, priority rules provide more flexibility. Priority rules can help to reduce the number of specific rules for example by just blacklisting a whole directory and whitelisting specific executables you would like to allow. For example, we recommend blacklisting the path C:\Windows\Temp\*. All programs that are in this directory can no longer be started. However, it can happen that certain update programs and installers want to execute their processes in this folder. A priority rule can solve this problem. To do this, we give the desired rule a higher priority in the [WHITELIST] with an exclamation mark. The rule in the whitelist now overrides the rule in the blacklist. Let's assume that the desired update is AVUpdater.exe. Then the rules are as follows:
+
+<pre>
+[WHITELIST]
+!C:\Windows\Temp\AVUpdater.exe
+[BLACKLIST]
+C:\Windows\Temp\*
+</pre>
+
+Priority rules are supported in the white- and blacklist, also for the command line check option. Please note: Rules with a higher priority must be in first order.
 
 <h3>Transitive Rules (Parentchecking)</h3>
 
