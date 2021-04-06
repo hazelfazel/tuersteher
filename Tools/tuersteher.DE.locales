@@ -1,0 +1,86 @@
+﻿msgNoSignalTitle|Kein Signal
+msgNoSignalText|ohne Kernel-Signalisierung. Kann Anwendung nicht korrekt initialisieren.
+
+msgNoEventhandlerTitle|Kein Eventhandler für Signale
+msgNoEventhandlerText|Konnte keinen Eventhandler erzeugen.
+
+trayIconToolTip|Excubits Türsteher
+
+msgDriverStatusTitle|-Status
+
+msgLogWasDeletedTitle|Log gelöscht
+msgLogWasDeletedText|Die Logdatei wurde erfolgreich gelöscht.
+
+msgLogWasNotDeletedTitle|Fehler: Log wurde nicht gelöscht
+msgLogWasNotDeletedTextPart1|Die Logdatei konnte nicht gelöscht werden. Bitte beachten: Sie müssen
+msgLogWasNotDeletedTextPart2|stoppen, um die Logdatei löschen zu können.
+
+msgStopClickStartInfoTitle|Info
+msgStopClickStartInfoTextPart1|Klicken, um
+msgStopClickStartInfoTextPart2|wieder zu starten.
+
+msgInfoTitle|Info
+
+msgDriverInfo|Kernel Mode Treiber:
+msgErrorOnConfigChange|Fehler, konnte Datei nicht tauschen.
+msgSuccessOnConfigChange|Konfigurationsdatei getauscht.
+msgRestartDriver|Neustart Treiber
+msgErrorConfigNotExisting|Fehler, zu tauschende Konfigurationsdatei existiert nicht (mehr).
+msgStart|Starte...
+msgStop|Stoppe...
+msgRestart|Neustart...
+
+trayMenuOpenLog|Logdatei öffnen
+trayMenuClearLog|Logdatei leeren
+
+trayMenuOpenConfiguration|Konfigurationsdatei öffnen
+trayMenuChangeConfiguration|Konfigurationsdatei wechseln
+
+trayMenuControl|Türsteher
+trayMenuControlStartDriver|Starte Türsteher
+trayMenuControlStopDriver|Stoppe Türsteher
+trayMenuControlStatusDriver|Status von Türsteher
+trayMenuControlRestartDriver|Starte Türsteher neu
+trayMenuControlStopClickStartDriver|Stop-Click-Start
+
+trayMenuInstallmode|Installationsmodus
+trayMenuInstallmodeOn|Installationsmodus EIN
+trayMenuInstallmodeOff|Installationsmodus AUS
+
+trayMenuOpenManual|Handbuch öffnen
+trayMenuVisitUsOnline|Excubits im Web
+
+trayMenuExit|Schließen
+
+notifyBlockedTitle|Unbekannter Programmcode blockiert
+notifyBlockedText|erkannte unbekannten Programmcode in:
+
+notifyBlockedEventLog|Unbekannter Programmcode blockiert:
+
+notifyNotRunningTitlePart1|Achtung:
+notifyNotRunningTitlePart2|ist nicht aktiv
+notifyNotRunningText|ist nicht aktiv und kann Sie daher nicht schützen.
+
+notifyRunningAgainTitle|aktiv
+notifyRunningAgainText|wurde wieder aktiviert.
+
+notifyNonLethalTitlePart1|Achtung:
+notifyNonLethalTitlePart2|im Simulationsmodus
+notifyNonLethalText|ist im Simulationsmodus, Sie sind nicht geschützt!
+notifyNonLethalForALittleWhileText|ist seit einiger Zeit im Simulationsmodus. Sie sind nicht geschützt!
+
+notifyInstallmodeTitlePart1|Achtung:
+notifyInstallmodeTitlePart2|im Installationsmodus
+notifyInstallmodeText|ist im Installationsmodus, Sie sind nicht geschützt!
+notifyInstallmodeForALittleWhileText|ist seit einiger Zeit im Installationsmodus. Sie sind nicht geschützt!
+
+eventlogText|Unbekannter Programmcode blockiert in: 
+
+integrityFaultTitle|Integritätsverletzung
+integrityFaultText|-Integrität verletzt. Programm wird beendet.
+
+dialogChangeConfigTitle|Neue Konfigurationsdatei auswählen
+dialogChangeConfigText|Konfigurationsdatei (*.ini)
+
+dialogClearLogTitle|Wirklich leeren?
+dialogClearLogText|Möchten Sie die Logdatei wirklich leeren und alle Einträge löschen?

@@ -1,0 +1,86 @@
+﻿msgNoSignalTitle|No signal
+msgNoSignalText|Without kernel signalling. Cannot initialize application correctly.
+
+msgNoEventhandlerTitle|No event handler for signalling
+msgNoEventhandlerText|Could not create an event handler.
+
+trayIconToolTip|Excubits Türsteher
+
+msgDriverStatusTitle|-Status
+
+msgLogWasDeletedTitle|Log cleared
+msgLogWasDeletedText|The log file was successfully cleared.
+
+msgLogWasNotDeletedTitle|Error: The log file was not deleted.
+msgLogWasNotDeletedTextPart1|The log file could not be deleted. Please note: You must stop
+msgLogWasNotDeletedTextPart2|to delete the log file.
+
+msgStopClickStartInfoTitle|Info
+msgStopClickStartInfoTextPart1|Please click
+msgStopClickStartInfoTextPart2|to restart the driver.
+
+msgInfoTitle|Info
+
+msgDriverInfo|Kernel Mode Driver:
+msgErrorOnConfigChange|Error, could not swap file.
+msgSuccessOnConfigChange|Configuration file has been swapped.
+msgRestartDriver|Restart driver
+msgErrorConfigNotExisting|Error, configuration file to swap does not exist (anymore).
+msgStart|Starting...
+msgStop|Stopping...
+msgRestart|Restarting...
+
+trayMenuOpenLog|Open log file
+trayMenuClearLog|Empty log file
+
+trayMenuOpenConfiguration|Open configuration file
+trayMenuChangeConfiguration|Change configuration file
+
+trayMenuControl|Türsteher
+trayMenuControlStartDriver|Start Türsteher
+trayMenuControlStopDriver|Stop Türsteher
+trayMenuControlStatusDriver|Status of Türsteher
+trayMenuControlRestartDriver|Restart Türsteher
+trayMenuControlStopClickStartDriver|Stop-Click-Start
+
+trayMenuInstallmode|Installation Mode
+trayMenuInstallmodeOn|Installation Mode ON
+trayMenuInstallmodeOff|Installation Mode OFF
+
+trayMenuOpenManual|Open the manual
+trayMenuVisitUsOnline|Visit our website
+
+trayMenuExit|Close TrayApp
+
+notifyBlockedTitle|Unknown program code blocked
+notifyBlockedText|detected unknown program code in:
+
+notifyBlockedEventLog|Unknown program code blocked:
+
+notifyNotRunningTitlePart1|Attention:
+notifyNotRunningTitlePart2|is not active
+notifyNotRunningText|is not active and therefore cannot protect you.
+
+notifyRunningAgainTitle|aktiv
+notifyRunningAgainText|has been reactivated.
+
+notifyNonLethalTitlePart1|Attention:
+notifyNonLethalTitlePart2|in simulation mode
+notifyNonLethalText|is in simulation mode. You are not protected!
+notifyNonLethalForALittleWhileText|has been in simulation mode for a little while. You are not protected!
+
+notifyInstallmodeTitlePart1|Attention:
+notifyInstallmodeTitlePart2|in installation mode
+notifyInstallmodeText|is in installation mode. You are not protected!
+notifyInstallmodeForALittleWhileText|has been in installation mode for a little while. You are not protected!
+
+eventlogText|Unknown program code blocked in: 
+
+integrityFaultTitle|integrity violation
+integrityFaultText|-Integrity violated. Program is terminated.
+
+dialogChangeConfigTitle|Select new configuration file
+dialogChangeConfigText|Configuration file (*.ini)
+
+dialogClearLogTitle|Clear Log?
+dialogClearLogText|Do you really want to clear the log file and delete all entries?

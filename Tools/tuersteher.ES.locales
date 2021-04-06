@@ -1,0 +1,86 @@
+﻿msgNoSignalTitle|Sin señal
+msgNoSignalText|Sin Kernel-señal. No se puede inicializar la aplicación correctamente.
+
+msgNoEventhandlerTitle|Sin controlador de eventos para señales
+msgNoEventhandlerText|No se pudo generar un controlador de eventos.
+
+trayIconToolTip|Excubits Türsteher
+
+msgDriverStatusTitle|-Estatus
+
+msgLogWasDeletedTitle|Log borrado
+msgLogWasDeletedText|El archivo de registro se eliminó con éxito.
+
+msgLogWasNotDeletedTitle|Error: Log no fue borrado
+msgLogWasNotDeletedTextPart1|El archivo de registro no se pudo eliminar. Tenga en cuenta: debe detener la aplicación
+msgLogWasNotDeletedTextPart2|para eliminar el archivo de registro.
+
+msgStopClickStartInfoTitle|Información
+msgStopClickStartInfoTextPart1|Por favor, clic para
+msgStopClickStartInfoTextPart2|para comenzar.
+
+msgInfoTitle|Información
+
+msgDriverInfo|Controlador de modo kernel:
+msgErrorOnConfigChange|Error, no se pudo intercambiar el archivo.
+msgSuccessOnConfigChange|Archivo de configuración de Exchange.
+msgRestartDriver|Reiniciar
+msgErrorConfigNotExisting|Error, el archivo de configuración intercambiado no existe.
+msgStart|Comience...
+msgStop|Detener...
+msgRestart|Comenzar de nuevo...
+
+trayMenuOpenLog|Abrir archivo de registro
+trayMenuClearLog|Archivo de registro vacío
+
+trayMenuOpenConfiguration|Abrir archivo de configuración
+trayMenuChangeConfiguration|Cambiar archivo de configuración
+
+trayMenuControl|Türsteher
+trayMenuControlStartDriver|Comience Türsteher
+trayMenuControlStopDriver|Detener Türsteher
+trayMenuControlStatusDriver|Mostrar estado de Türsteher
+trayMenuControlRestartDriver|Comenzar de nuevo Türsteher
+trayMenuControlStopClickStartDriver|Detener-Clic-Comience
+
+trayMenuInstallmode|Modo de instalación
+trayMenuInstallmodeOn|Modo de instalación apague
+trayMenuInstallmodeOff|Modo de instalación interruptor
+
+trayMenuOpenManual|Abra el manual
+trayMenuVisitUsOnline|Visítenos Online
+
+trayMenuExit|Termine TrayApp
+
+notifyBlockedTitle|Código de programa desconocido bloqueado
+notifyBlockedText|detectado código de programa desconocido en:
+
+notifyBlockedEventLog|Código de programa desconocido bloqueado:
+
+notifyNotRunningTitlePart1|Atención: El
+notifyNotRunningTitlePart2|no está activo
+notifyNotRunningText|no está activo y no puede protegerlo!
+
+notifyRunningAgainTitle|está activo
+notifyRunningAgainText|ha sido activado..
+
+notifyNonLethalTitlePart1|Atención: El
+notifyNonLethalTitlePart2|está en modo de simulación
+notifyNonLethalText|ha estado en modo de simulación. Usted no está protegido!
+notifyNonLethalForALittleWhileText|ha estado en modo de simulación durante algún tiempo. Usted no está protegido!
+
+notifyInstallmodeTitlePart1|Atención: El
+notifyInstallmodeTitlePart2|está en modo de instalactión
+notifyInstallmodeText|ha estado en modo de instalactión. Usted no está protegido!
+notifyInstallmodeForALittleWhileText|ha estado en modo de instalactión durante algún tiempo. Usted no está protegido!
+
+eventlogText|Código de programa desconocido bloqueado en: 
+
+integrityFaultTitle|Violación de la integridad
+integrityFaultText|-Violación de la integridad. El programa ahora está terminado.
+
+dialogChangeConfigTitle|Seleccionar nuevo archivo de configuración
+dialogChangeConfigText|Archivo de configuración (*.ini)
+
+dialogClearLogTitle|¿Realmente vacío?
+dialogClearLogText|¿Realmente desea vaciar el archivo de registro y eliminar todas las entradas?
