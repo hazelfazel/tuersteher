@@ -2,9 +2,11 @@
 
 <h2>About</h2>
 
-Türsteher is a free powerful Windows kernel driver for comprehensive executable white- and blacklisting for any kind of executable (exe, com, scr, sys, dll, ocx). Türsteher works according to the exclusion principle using a whitelist: All explicitly allowed executables run as desired. Türsteher also supports a blacklist where you can specify executables to block. In addition Türsteher supports parent - child rules, so you can specify what executable an application is allowed to start. The driver also support command line rules. This is a very powerful option for malware analysis. We used Türsteher for many years to quickly track down the path of infection without need for a sophisticated analysis environment. Türsteher also helped us to examine software issues on big scaled installations. Türsteher can also be used to enforce software license management, interface control etc.
+Türsteher is a free powerful Windows kernel driver for comprehensive executable white- and blacklisting for any kind of executable (exe, com, scr, sys, dll, ocx). Türsteher works according to the exclusion principle using a allowlist (formerly known as a whitelist): All explicitly allowed executables run as desired. Türsteher also supports a blocklist (formerly known as a blacklist) where you can specify executables to block. In addition Türsteher supports parent - child rules, so you can specify what executable an application is allowed to start. The driver also support command line rules. This is a very powerful option for malware analysis. We used Türsteher for many years to quickly track down the path of infection without need for a sophisticated analysis environment. Türsteher also helped us to examine software issues on big scaled installations. Türsteher can also be used to enforce software license management, interface control etc.
 
 Türsteher is just a kernel driver without any additional bulk. Türsteher has a damn small binary footprint and is ultra-fast. It does not collect any telemetry data, nor does it require any internet connection to function. Through its simple and solid architecture you have control. It complies with GDPR. You may easily write your own additional tools.
+
+In my opinion Tuersteher is one of the best performing such driver one can have. It enables you to not just block uninteded applications it is also possible to block drivers for unwanted hardware (aka device control).
 
 <h2>Disclaimer</h2>
 
@@ -27,19 +29,19 @@ Here we have an example of a basic tuersteher.ini file:
 [CMDCHECK]
 [#ADMINBYPASS]
 [CNAMELOGGING]
-[WHITELIST]
+[ALLOWLIST]
 C:\Windows\*
 C:\Program Files\*
 C:\Program Files (x86)\*
 C:\ProgramData\Microsoft\*
-[BLACKLIST]
+[BLOCKLIST]
 C:\Windows\System32\msiexec.exe
 C:\Program Files\Internet Explorer\iexplore.exe
 C:\Program Files (x86)\Internet Explorer\iexplore.exe
-[CMDWHITELIST]
+[CMDALLOWLIST]
 !*explorer.exe>*wscript.exe*C:\Firmenskripte\*
 *>*
-[CMDBLACKLIST]
+[CMDBLOCKLIST]
 *explorer.exe>*wscript.exe*
 [EOF]
 </pre>
@@ -52,7 +54,7 @@ We call Türsteher to be in lethal mode if Türsteher will enforce any of your s
 Once you have completed and tested the configuration, you can activate Türsteher by setting [LETHAL]. Now unknown and dangerous programs are blocked.
 
 <h3>The Log File</h3>
-We recommend that you always activate logging, [LOGGING] = on. Türsteher then writes each event to the log file (C:\Windows\Türsteher.log). For example, if a program tries to start, that was not specified in the whitelist. If you do not like to log, disable it by specifying [#LOGGING].
+We recommend that you always activate logging, [LOGGING] = on. Türsteher then writes each event to the log file (C:\Windows\Türsteher.log). For example, if a program tries to start, that was not specified in the allowlist. If you do not like to log, disable it by specifying [#LOGGING].
 Log the Computer Name
 If you'd like to deploy Türsteher in a larger scale you may analyse the logs centrally. Then you need to differentiate between files coming from different machines. One way is to differentiate by the computer’s name. You can activate this feature by setting [CNAMELOGGING], and deactivate it by [#CNAMELOGGING].
 
@@ -63,17 +65,17 @@ If you’d like to use Türsteher’s Command line checking engine, enable it by
 The Admin-bypass feature allows you to bypass system and admin processes. This helps to reduce the complexity of your rules, and on how you install patches or updates which often require SYSTEM/admin privileges. On the other hand, we must point out that there is an additional risk with this option, because malicious executables running as SYSTEM or in the admin group could also bypass. So, you need to balance between security and comfort, but you now have a choice. You can activate this feature by setting [ADMINBYPASS], and deactivate it by [#ADMINBYPASS].
 
 
-<h3>Configure Whitelist</h3>
+<h3>Configure Allowlist</h3>
 
 <pre>
-[WHITELIST]
+[ALLOWLIST]
 C:\Windows\*
 C:\Program Files\*
 C:\Program Files (x86)\*
 C:\ProgramData\*
 </pre>
 
-Below the entry [WHITELIST] you shall specify all paths from which executables are allowed to be started. Here you should define at least the file paths that are absolutely necessary for the operation of Windows and the programs you have installed, i.e. in particular all paths (or files) required by the Windows operating system. Usually these are:
+Below the entry [ALLOWLIST] you shall specify all paths from which executables are allowed to be started. Here you should define at least the file paths that are absolutely necessary for the operation of Windows and the programs you have installed, i.e. in particular all paths (or files) required by the Windows operating system. Usually these are:
 
 <pre>
 C:\Windows\*
@@ -85,54 +87,54 @@ If you are using a 64-bit version of Windows, you will also find the path for in
 C:\Program Files (x86)\*
 Make sure that you end each rule with the * symbol. The star symbol serves as wildcard and allows all files and subdirectories in these folders.
 
-<h4>Add trusted executables to the whitelist</h4>
+<h4>Add trusted executables to the allowlist</h4>
 
-If you have installed additional  executables in other directories than C:\Program Files\, you need to add them onto the whitelist. For example:
+If you have installed additional  executables in other directories than C:\Program Files\, you need to add them onto the allowlist. For example:
 
 <pre>
 D:\PortableApps\VeraCrypt\*
 D:\PortableApps\Gimp\*
 </pre>
 
-In addition to path specifications, you can also enter individual  executables in the whitelist. To do so, write the complete path with the file name and its extension in one line.
+In addition to path specifications, you can also enter individual  executables in the allowlist. To do so, write the complete path with the file name and its extension in one line.
 
-<h3>Configure the Blacklist</h3>
+<h3>Configure the Blocklist</h3>
 
-Below the entry [BLACKLIST] you define all paths from which no program code is allowed to be started. Programs on this list are automatically blocked. Suppose a security hole has been discovered in Microsoft Browser Internet Explorer and there is no update for this vulnerability yet. With just some line in the blacklist you can avoid running untrusted or exploitable applications or libraries. Once the vulnerability has been patched you can simply remove the rules, use the application again.
+Below the entry [BLOCKLIST] you define all paths from which no program code is allowed to be started. Programs on this list are automatically blocked. Suppose a security hole has been discovered in Microsoft Browser Internet Explorer and there is no update for this vulnerability yet. With just some line in the blocklist you can avoid running untrusted or exploitable applications or libraries. Once the vulnerability has been patched you can simply remove the rules, use the application again.
 
 <pre>
-[BLACKLIST]
+[BLOCKLIST]
 C:\Windows\System32\msiexec.exe
 C:\Program Files\Internet Explorer\iexplore.exe
 C:\Program Files (x86)\Internet Explorer\iexplore.exe
 </pre>
 
-Suggestion:  Instead of an entire directory, it may also be appropriate to disable certain files, such as a vulnerable DLL to a plug-in, for example, if they are at risk due to a security breach. It is often the case that certain libraries or plug-ins are vulnerable to attacks. Cyber criminals use exploits to trigger the security breach in such libraries/plug-ins to infect your computer. If you block the vulnerable library or plug-in using Türsteher’s blacklist, they can no longer be exploited. After the libraries or plug-ins have been updated, you can remove the rule from the blacklist and use them again.
+Suggestion:  Instead of an entire directory, it may also be appropriate to disable certain files, such as a vulnerable DLL to a plug-in, for example, if they are at risk due to a security breach. It is often the case that certain libraries or plug-ins are vulnerable to attacks. Cyber criminals use exploits to trigger the security breach in such libraries/plug-ins to infect your computer. If you block the vulnerable library or plug-in using Türsteher’s blocklist, they can no longer be exploited. After the libraries or plug-ins have been updated, you can remove the rule from the blocklist and use them again.
 
-Please note: Disabling drivers, libraries or plug-ins sometimes result in stopping the application or system from working properly. Hence, before disabling any executable you shall always test the behaviours and be careful with what you disable. We heavily encourage you to do some testing on demo or test machines, before deploying any updated Türsteher blacklist rules to a production line computer system.
+Please note: Disabling drivers, libraries or plug-ins sometimes result in stopping the application or system from working properly. Hence, before disabling any executable you shall always test the behaviours and be careful with what you disable. We heavily encourage you to do some testing on demo or test machines, before deploying any updated Türsteher blocklist rules to a production line computer system.
 
 <h3>Command Line Checking</h3>
 
-In addition Türsteher also support Command Line Checking. This option is beyond traditional Application White-/Blacklisting and gives you even more control. We suggest that you turn Türsteher into [#LETHAL] mode and have a look into the log while [CMDCHECK] is enabled. The configuration heavily depends on your requirements, so it is hard to give advice here. Just try it out. Türsteher provides a White- and Blacklist for Command Line Checking. You shall specify them at [CMDWHITELIST] and [CMDBLACKLIST].
+In addition Türsteher also support Command Line Checking. This option is beyond traditional Application Allow-/Blocklisting and gives you even more control. We suggest that you turn Türsteher into [#LETHAL] mode and have a look into the log while [CMDCHECK] is enabled. The configuration heavily depends on your requirements, so it is hard to give advice here. Just try it out. Türsteher provides a Allow- and Blocklist for Command Line Checking. You shall specify them at [CMDALLOWLIST] and [CMDBLOCKLIST].
 
 <h3>Priority Rules</h3>
 
-Priority rules are rules, that can overwrite any other rules, whether they are on the white- or blacklist. Although Türsteher supports a very powerful rules mechanism, priority rules provide more flexibility. Priority rules can help to reduce the number of specific rules for example by just blacklisting a whole directory and whitelisting specific executables you would like to allow. For example, we recommend blacklisting the path C:\Windows\Temp\*. All programs that are in this directory can no longer be started. However, it can happen that certain update programs and installers want to execute their processes in this folder. A priority rule can solve this problem. To do this, we give the desired rule a higher priority in the [WHITELIST] with an exclamation mark. The rule in the whitelist now overrides the rule in the blacklist. Let's assume that the desired update is AVUpdater.exe. Then the rules are as follows:
+Priority rules are rules, that can overwrite any other rules, whether they are on the allow- or blocklist. Although Türsteher supports a very powerful rules mechanism, priority rules provide more flexibility. Priority rules can help to reduce the number of specific rules for example by just blocklisting a whole directory and allowlisting specific executables you would like to allow. For example, we recommend blocklisting the path C:\Windows\Temp\*. All programs that are in this directory can no longer be started. However, it can happen that certain update programs and installers want to execute their processes in this folder. A priority rule can solve this problem. To do this, we give the desired rule a higher priority in the [ALLOWLIST] with an exclamation mark. The rule in the allowlist now overrides the rule in the blocklist. Let's assume that the desired update is AVUpdater.exe. Then the rules are as follows:
 
 <pre>
-[WHITELIST]
+[ALLOWLIST]
 !C:\Windows\Temp\AVUpdater.exe
-[BLACKLIST]
+[BLOCKLIST]
 C:\Windows\Temp\*
 </pre>
 
-Priority rules are supported in the white- and blacklist, also for the command line check option. Please note: Rules with a higher priority must be in first order.
+Priority rules are supported in the allow- and blocklist, also for the command line check option. Please note: Rules with a higher priority must be in first order.
 
 <h3>Transitive Rules (Parentchecking)</h3>
 
-Türsteher also supports conditional rules for parent processes in the [WHITELIST] and [BLACKLIST]. There are programs that start subprograms as required after starting the main program. We call the main program the parent process, the subprograms child processes. The fact that parent processes start subprograms, i.e. child processes, is necessary and useful for programs such as the Explorer. But hackers use this technique to execute their evil executables through media players, browsers or office applications. For example, a Word document contains a macro which forces Word to download and execute a cryptolocker. With parentchecking Türsteher can block such attacks.
+Türsteher also supports conditional rules for parent processes in the [ALLOWLIST] and [BLOCKLIST]. There are programs that start subprograms as required after starting the main program. We call the main program the parent process, the subprograms child processes. The fact that parent processes start subprograms, i.e. child processes, is necessary and useful for programs such as the Explorer. But hackers use this technique to execute their evil executables through media players, browsers or office applications. For example, a Word document contains a macro which forces Word to download and execute a cryptolocker. With parentchecking Türsteher can block such attacks.
 
-During parentchecking, Türsteher checks which parent processes wants to start the executable before starting the child process. If the corresponding parent is on the whitelist, the child is allowed to start, otherwise it will be blocked. For example, you can define that your Mailclient or Wordprocessor cannot execute processes, shell codes, runtime libraries or drivers (.dll, .sys, .ocx, .drv, .cpl). This can help to mitigate against a whole bunch of attack vectors if you specify the rules tight.
+During parentchecking, Türsteher checks which parent processes wants to start the executable before starting the child process. If the corresponding parent is on the allowlist, the child is allowed to start, otherwise it will be blocked. For example, you can define that your Mailclient or Wordprocessor cannot execute processes, shell codes, runtime libraries or drivers (.dll, .sys, .ocx, .drv, .cpl). This can help to mitigate against a whole bunch of attack vectors if you specify the rules tight.
 
 The rules for parent checking have the following general format: 
 Parent>Child
@@ -141,18 +143,18 @@ Please note: A path- or filename is separated by the > symbol. No spaces are all
 <h3>Silent Rules</h3>
 Silent Rules allow you to block events which you do not want showing up in the logs. So, with Silent Rules you are able to calm down annoying alerts you cannot get rid of, because e.g. the operating system's core automatically triggers them without any chance to block them.
 
-For example: If you would like to blacklist a Windows’ core library or driver that cannot be removed via the system’s configuration, and thus causing “harmless” alerts each and every time the operating systems tries to launch it. There is no way to avoid such attempts, but with Silent Rules you are able to calm them down. Just specify the $ character before a blacklist rule and it will not show up in the logs.
+For example: If you would like to blocklist a Windows’ core library or driver that cannot be removed via the system’s configuration, and thus causing “harmless” alerts each and every time the operating systems tries to launch it. There is no way to avoid such attempts, but with Silent Rules you are able to calm them down. Just specify the $ character before a blocklist rule and it will not show up in the logs.
 
 A simple silent rule is shown here:
 
 <pre>
-[BLACKLIST]
+[BLOCKLIST]
 $*notepad.exe
 </pre>
 
 This example rule defines that notepad.exe should be blocked and that no log entry should be written to the log file. If Notepad is getting started, it will be blocked by Türsteher without any event logged.
 
-Please note: Silent rules can only be specified in the blacklist areas [BLACKLIST] and [CMDBLACKLIST].
+Please note: Silent rules can only be specified in the blocklist areas [BLOCKLIST] and [CMDBLOCKLIST].
 
 <h3>End of configuration</h3>
 
@@ -170,7 +172,7 @@ Make use of the driver_install.cmd script. If you want to install the driver man
 
 <h3>Anti-Virus Warnings</h3>
 
-Maybe your browser or your AV warns you when you download Türsteher or its components. This is a false-positive. We have been struggling to remove Türsteher from the blacklist of well known below average AV products. In many cases without success. Türsteher is no malware. Türsteher is no rootkit. Türsteher is not dangerous. It is just that below average AV companies that seem to dislike us. Why? Well, more and more serious IT magazines and IT Pros already postulate: If you use MS Defender you are very well protected. We say: If you supplement MS Defender with Application Whitelisting (like AppLocker or Türsteher), you are even better prepared. We all know that traditional AV vendors sturrgle on sells and no longer have high margins, so ask yourself, what could be the cause for blocking other's solutions ....... hmmmmm ....... we don’t know ....... very difficult to imagine ....... 😉
+Maybe your browser or your AV warns you when you download Türsteher or its components. This is a false-positive. We have been struggling to remove Türsteher from the blocklist of well known AV products. In many cases without success. Türsteher is no malware. Türsteher is no rootkit. Türsteher is not dangerous.
 
 <h2>Additional Services (may require a formal agreement, NDA)</h2>
 <ul>
@@ -180,13 +182,12 @@ Maybe your browser or your AV warns you when you download Türsteher or its comp
   <li>Driver source code (under NDA)</li>
 </ul>
 
+<h2>Support</h2>
+Well, driver signing costs a lot of money. If you like Tuersteher and want to support me, donate to my BTC wallet: bc1qy2xa6crhtlwlyumjfyvsld48f45635y2tnj32p
+
 <h2>About Open Source</h2>
 
-I do not plan to share the source code of this tool for free.
-
-<h2>FAQ</h2>
-
-Lorem ipsum...
+I do not plan to share the source code of this tool for free. But I will soon publish a demo skeleton driver so you can develop your own one.
 
 <h2>Contact</h2>
 
