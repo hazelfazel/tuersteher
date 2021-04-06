@@ -7,7 +7,7 @@ Signature   = "$Windows NT$"
 Class       = "ActivityMonitor"                         ;This is determined by the work this filter driver does
 ClassGuid   = {b86dff51-a31e-4bac-b3cf-e8cfe75c9fc2}    ;This value is determined by the Class
 Provider    = %Msft%
-DriverVer=08/25/2020,14.8.16.278
+DriverVer=01/30/2021,19.21.2.814
 CatalogFile = tuersteher.cat
 
 [DestinationDirs]
