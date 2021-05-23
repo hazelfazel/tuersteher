@@ -2,11 +2,11 @@
 
 <h2>About</h2>
 
-Türsteher is a free powerful Windows kernel driver for comprehensive application control, formerly known as executable white- and blacklisting. Türsteher works according to the exclusion principle using an allowlist (formerly known as a whitelist): All explicitly allowed executables run as desired. Türsteher also supports a blocklist (formerly known as a blacklist) where you can specify executables to block. In addition Türsteher supports parent - child rules, so you can specify what executable an application is allowed to start. The driver also support command line rules. This is a very powerful option for malware analysis. We used Türsteher for many years to quickly track down the path of infection without need for a sophisticated analysis environment. Türsteher also helped us to examine software issues on big scaled installations. Türsteher can also be used to enforce software license management, interface control etc.
+Türsteher is a free powerful Windows kernel driver for comprehensive application control, formerly known as executable white- and blacklisting. Türsteher works according to the exclusion principle using an allowlist (formerly known as a whitelist): All explicitly allowed executables run as desired. Türsteher also supports a blocklist (formerly known as a blacklist) where you can specify executables to block. In addition Türsteher supports parent - child rules, so you can specify what executable an application is allowed to start. The driver also support command line rules. This is a very powerful option for malware analysis. We used Türsteher for many years to quickly track down the path of infection without need for a sophisticated analysis environment. Türsteher also helped us to examine software issues on big scaled installations. Türsteher can also be used to enforce software license management, interface- and device control etc.
 
-Türsteher is just a kernel driver without any additional bulk. Türsteher has a damn small binary footprint and is ultra-fast. It does not collect any telemetry data, nor does it require any internet connection to function. Through its simple and solid architecture you have control. It complies with GDPR. You may easily write your own additional tools.
+Türsteher is just a kernel driver without any additional bulk. Türsteher has a damn small binary footprint and is ultra-fast. It does not collect any telemetry data, nor does it require any internet connection to function. Through its simple and solid design YOU have full control. It complies with GDPR. You may easily write your own additional admin tools and scripts.
 
-In my opinion Tuersteher is one of the best performing such driver one can have. It enables you to not just block uninteded applications it is also possible to block drivers for unwanted hardware (aka device control).
+Türsteher supports 32-bit and 64-bit Editions of Windows starting with Windows 7. Türsteher even runs on current Windows Server, including Windows Server Core!
 
 <h2>Disclaimer</h2>
 
@@ -174,16 +174,16 @@ Make use of the driver_install.cmd script. If you want to install the driver man
 
 Maybe your browser or your AV warns you when you download Türsteher or its components. These are false-positive warnings. We have been struggling to remove Türsteher from the blocklist of well known AV products. In many cases without success. Türsteher is no malware. Türsteher is no rootkit. Türsteher is not dangerous.
 
-<h2>Additional Services (may require a formal agreement, NDA)</h2>
+<h2>Additional Services</h2>
 <ul>
   <li>Consulting on Kernel Drivers and Kernel Driver Dev</li>
   <li>Driver (binary) customisation</li>
-  <li>Driver source code (only under NDA)</li>
+  <li>Driver source code (only for companies; requires NDA)</li>
 </ul>
 
 <h2>Support this Project</h2>
 
-If you like Tuersteher consider to donate BTC: bc1qy2xa6crhtlwlyumjfyvsld48f45635y2tnj32p
+If you like Türsteher, it helped you to secure your IT, helped you to defeat ransomware etc., consider to donate BTC: bc1qy2xa6crhtlwlyumjfyvsld48f45635y2tnj32p
 
 <h2>About Open Source</h2>
 
@@ -191,7 +191,7 @@ I do not plan to share the source code of this tool for free. But I will soon pu
 
 <h2>Device Control</h2>
 
-You can use Tuersteher as a simple device control endpoint protection. All you need to do is to block the drivers of external devices you would like to block. As a very simple example check out this blocklist:
+You can use Türsteher as a simple device control endpoint protection. All you need to do is to block the drivers of external devices you would like to block. As a very simple example check out this blocklist:
 
 <pre>
 ### Simple Device Control ###
