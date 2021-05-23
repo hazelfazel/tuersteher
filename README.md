@@ -166,7 +166,7 @@ The configuration file shall always end with the following line:
 
 Please note that Türsteher does not accept the configuration file and does not load the driver if it is not completed with [EOF].
 
-<h2>Install the Türsteher Driver (türsteher.sys)</h2>
+<h2>Install the Türsteher Driver (tuersteher.sys)</h2>
 
 Make use of the driver_install.cmd script. If you want to install the driver manually first read the EULA and accept it. Then check the driver_install.cmd script for more details. Before you can start Türsteher you shall specify a proper tuersteher.ini in C:\Windows\. Without that .ini the driver will not load.
 
