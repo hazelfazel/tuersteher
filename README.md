@@ -223,7 +223,7 @@ You can use Tuersteher as a simple device control endpoint protection. All you n
 *vwifimp.sys
 *scfilter.sys
 ### Simple Device Control ###
-<pre>
+</pre>
 
 If you would like to go further you can generate a list of allowed drivers in "training mode", then only allow drivers your endpoints really need to function. Then block all other drivers (*.sys). To keep it simple you could start with blocking
 
