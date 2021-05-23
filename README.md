@@ -2,7 +2,7 @@
 
 <h2>About</h2>
 
-Türsteher is a free powerful Windows kernel driver for comprehensive executable white- and blacklisting for any kind of executable (exe, com, scr, sys, dll, ocx). Türsteher works according to the exclusion principle using a allowlist (formerly known as a whitelist): All explicitly allowed executables run as desired. Türsteher also supports a blocklist (formerly known as a blacklist) where you can specify executables to block. In addition Türsteher supports parent - child rules, so you can specify what executable an application is allowed to start. The driver also support command line rules. This is a very powerful option for malware analysis. We used Türsteher for many years to quickly track down the path of infection without need for a sophisticated analysis environment. Türsteher also helped us to examine software issues on big scaled installations. Türsteher can also be used to enforce software license management, interface control etc.
+Türsteher is a free powerful Windows kernel driver for comprehensive application control, formerly known as executable white- and blacklisting. Türsteher works according to the exclusion principle using an allowlist (formerly known as a whitelist): All explicitly allowed executables run as desired. Türsteher also supports a blocklist (formerly known as a blacklist) where you can specify executables to block. In addition Türsteher supports parent - child rules, so you can specify what executable an application is allowed to start. The driver also support command line rules. This is a very powerful option for malware analysis. We used Türsteher for many years to quickly track down the path of infection without need for a sophisticated analysis environment. Türsteher also helped us to examine software issues on big scaled installations. Türsteher can also be used to enforce software license management, interface control etc.
 
 Türsteher is just a kernel driver without any additional bulk. Türsteher has a damn small binary footprint and is ultra-fast. It does not collect any telemetry data, nor does it require any internet connection to function. Through its simple and solid architecture you have control. It complies with GDPR. You may easily write your own additional tools.
 
@@ -172,30 +172,77 @@ Make use of the driver_install.cmd script. If you want to install the driver man
 
 <h3>Anti-Virus Warnings</h3>
 
-Maybe your browser or your AV warns you when you download Türsteher or its components. This is a false-positive. We have been struggling to remove Türsteher from the blocklist of well known AV products. In many cases without success. Türsteher is no malware. Türsteher is no rootkit. Türsteher is not dangerous.
+Maybe your browser or your AV warns you when you download Türsteher or its components. These are false-positive warnings. We have been struggling to remove Türsteher from the blocklist of well known AV products. In many cases without success. Türsteher is no malware. Türsteher is no rootkit. Türsteher is not dangerous.
 
 <h2>Additional Services (may require a formal agreement, NDA)</h2>
 <ul>
-  <li>Consulting and Pro Service Support</li>
+  <li>Consulting on Kernel Drivers and Kernel Driver Dev</li>
   <li>Driver (binary) customisation</li>
-  <li>White-Label Release / Your Company Name Release</li>
-  <li>Driver source code (under NDA)</li>
+  <li>Driver source code (only under NDA)</li>
 </ul>
 
-<h2>Support</h2>
-Well, driver signing costs a lot of money. If you like Tuersteher and want to support me, donate to my BTC wallet: bc1qy2xa6crhtlwlyumjfyvsld48f45635y2tnj32p
+<h2>Support this Project</h2>
+
+If you like Tuersteher consider to donate BTC: bc1qy2xa6crhtlwlyumjfyvsld48f45635y2tnj32p
 
 <h2>About Open Source</h2>
 
 I do not plan to share the source code of this tool for free. But I will soon publish a demo skeleton driver so you can develop your own one.
 
+<h2>Device Control</h2>
+
+You can use Tuersteher as a simple device control endpoint protection. All you need to do is to block the drivers of external devices you would like to block. As a very simple example check out this blocklist:
+
+<pre>
+### Simple Device Control ###
+*WpdUpFltr.sys
+*USBSTOR.SYS
+*AppleLowerFilter.sys
+*usbprint.sys
+*usbport.sys
+*sfloppy.sys
+*serial.sys
+*sermouse.sys
+*sdstor.sys
+*sdport.sys
+*sdbus.sys
+*bth*.sys
+*rfcomm.sys
+*Bluetooth*.sys
+*BtaMPM.sys
+*cdrom.sys
+*hidbth.sys
+*usbaudio.sys
+*usbaudio2.sys
+*usbcamd2.sys
+*ax88179_178a.sys
+*rtwlanu.sys
+*WdiWiFi.sys
+*vwifibus.sys
+*vwififlt.sys
+*vwifimp.sys
+*scfilter.sys
+### Simple Device Control ###
+<pre>
+
+If you would like to go further you can generate a list of allowed drivers in "training mode", then only allow drivers your endpoints really need to function. Then block all other drivers (*.sys). To keep it simple you could start with blocking
+
+<pre>
+*WpdUpFltr.sys
+*USBSTOR.SYS
+*AppleLowerFilter.sys
+*sfloppy.sys
+*serial.sys
+*sermouse.sys
+*sdstor.sys
+*sdport.sys
+*sdbus.sys
+*cdrom.sys
+</pre>
+
 <h2>Contact</h2>
 
 E-mail me via HazelFazel <nospam>(at)</nospam> bitnuts.de
 
-<ul>
-  <li>If you find bugs, have constructive suggestions contact me.</li>
-  <li>If you would like to request for additional pro service support or consulting, please contact me. I will only answer requests coming from real existing professionals or organisations. Do not waste my time with phony or cheeky requests.</li>
-  <li>I only reply to E-mails I am interested in.</li>
-</ul>
+I only reply to E-mails I am interested in and if I have time to answer. I am busy.
 
