@@ -2,23 +2,23 @@
 
 <h2>About</h2>
 
-Türsteher is a free powerful Windows kernel driver for comprehensive application control, formerly known as executable white- and blacklisting. Türsteher works according to the exclusion principle using an allowlist (formerly known as a whitelist): All explicitly allowed executables run as desired. Türsteher also supports a blocklist (formerly known as a blacklist) where you can specify executables to block. In addition Türsteher supports parent - child rules, so you can specify what executable an application is allowed to start. The driver also support command line rules. This is a very powerful option for malware analysis. We used Türsteher for many years to quickly track down the path of infection without need for a sophisticated analysis environment. Türsteher also helped us to examine software issues on big scaled installations. Türsteher can also be used to enforce software license management, interface- and device control etc.
+Türsteher is a free powerful Windows kernel driver for comprehensive application control, formerly known as executable white- and blacklisting. Türsteher works according to the exclusion principle using an allowlist (formerly known as a whitelist): All explicitly allowed executables run as desired. Türsteher also supports a blocklist (formerly known as a blacklist) where you can specify executables to block. In addition Türsteher supports parent - child rules, so you can specify what executable an application is allowed to start. The driver also supports command line filtering. We used Türsteher for many years to quickly track down the path of infection without need for a sophisticated analysis environment. Türsteher also helped us to examine software issues on big scaled migration projects. Türsteher can also be used to enforce basic software license management, interface- and device control etc.
 
-Türsteher is just a kernel driver without any additional bulk. Türsteher has a damn small binary footprint and is ultra-fast. It does not collect any telemetry data, nor does it require any internet connection to function. Through its simple and solid design YOU have full control. It complies with GDPR. You may easily write your own additional admin tools and scripts.
+Türsteher is just a kernel driver without any additional bulk. Türsteher has a very small binary footprint and is ultra-fast. It does not collect any telemetry data, nor does it require any internet connection to function. Through its simple and solid design YOU have full control. It complies with GDPR. You may easily write your own additional admin tools and scripts.
 
-Türsteher supports 32-bit and 64-bit Editions of Windows starting with Windows 7. Türsteher even runs on current Windows Server, including Windows Server Core!
+Türsteher supports 32-bit and 64-bit Editions of Windows starting with Windows 7. Türsteher even runs on current Windows Server, including Windows Server Core (yes! Windows Core).
 
 <h2>Disclaimer</h2>
 
-Türsteher and its components is licensed and provided “as is”. You bear the risk of use. We do not express any warranties, representations or conditions. You may not claim any direct or other damages, including consequential damages, lost profits, special, indirect or incidental damages. Consider yourself warned and informed.
+Türsteher and its components is licensed and provided “as is”. You bear the risk of use. We (I) do not express any warranties, representations or conditions. You may not claim any direct or other damages, including consequential damages, lost profits, special, indirect or incidental damages. Consider yourself warned and informed.
 
 <h2>Target Audience</h2>
 
-IT- and Security Professionals. You should know about the Windows OS, its architecture, current malware attack strategies and how to defeat them.
+IT- and Security Professionals.
 
 <h2>How to Setup Türsteher</h2>
 
-Before you can install and run the driver, you shall setup a configuration file for Türsteher. The configuration of Türsteher is located in C:\Windows\Tursteher.ini. The file shall be in Unicode format. The specified rules are *not* case-sensitive. In addition, Türsteher also support wildcards. You can use these to generalise rules. For example, you can use *.scr to define that all files with extension .scr should be blocked. Türsteher recognises the star * for any number of characters and the question mark ? for exactly one character. After each change of tuersteher.ini, the driver must be restarted. The first rule fitting the best, is the rule that is taken. You shall always put the most important rule on a higher position in the tuersteher.ini.
+Before you can install and run the driver, you shall setup a configuration file. The configuration of Türsteher is located in C:\Windows\Tursteher.ini. The file shall be in Unicode format (UTF-16 LE). The specified rules are *not* case-sensitive. Türsteher also support wildcards. You can use these to generalise rules. For example, you can use *.scr to define that all files with extension .scr should be blocked. Türsteher recognises the star * for any number of characters and the question mark ? for exactly one character. After each change of tuersteher.ini, the driver must be restarted. The first rule fitting the best, is the rule that is taken. You shall always put the most important rule on a higher position in the tuersteher.ini.
 
 Here we have an example of a basic tuersteher.ini file:
 
@@ -47,22 +47,24 @@ C:\Program Files (x86)\Internet Explorer\iexplore.exe
 </pre>
 
 <h3>Using the hashtag (#)</h3>
-The hashtag (#) means switched off or comment a line out. To disable an option use use # within the brackets [# ...], e.g. [#LETHAL]. To disable a rule just specify # at the beginning of a line like #C:\Users\Test\*.exe.
+The hashtag (#) means switched off or comments a line out. To disable an option use use # within the brackets [# ...], e.g. [#LETHAL]. To disable a rule just specify # at the beginning of a line like #C:\Users\Test\*.exe.
 
 <h3>Lethal Mode</h3>
-We call Türsteher to be in lethal mode if Türsteher will enforce any of your specified rules. I.e. Türsteher will block excutables. If you are using Türsteher for the first time you shall start with [#LETHAL] option. This allows you to test the settings without causing problems with incorrect configurations. Be super cautious if you are using Türsteher for the first time or you risk to brick your system!
-Once you have completed and tested the configuration, you can activate Türsteher by setting [LETHAL]. Now unknown and dangerous programs are blocked.
+We call Türsteher to be in lethal mode if Türsteher will enforce any of your specified rules. I.e. Türsteher will block excutables. If you are using Türsteher for the very first time you shall start with [#LETHAL] option. This allows you to test the settings without causing problems. Be super cautious if you are using Türsteher for the first time or you risk to brick your system!
+
+Once you have completed and tested the configuration, you can activate Türsteher by setting [LETHAL].
 
 <h3>The Log File</h3>
-We recommend that you always activate logging, [LOGGING] = on. Türsteher then writes each event to the log file (C:\Windows\Türsteher.log). For example, if a program tries to start, that was not specified in the allowlist. If you do not like to log, disable it by specifying [#LOGGING].
-Log the Computer Name
-If you'd like to deploy Türsteher in a larger scale you may analyse the logs centrally. Then you need to differentiate between files coming from different machines. One way is to differentiate by the computer’s name. You can activate this feature by setting [CNAMELOGGING], and deactivate it by [#CNAMELOGGING].
+We recommend that you always activate logging, specify [LOGGING]. Türsteher then writes each event to the log file (C:\Windows\tuersteher.log). For example, if a program tries to start, that was not specified in the allowlist. If you do not like to log, disable it by specifying [#LOGGING].
+
+<h4>Log the Computer Name</h4>
+If you'd like to deploy Türsteher on larger scale you may analyse logs centrally. You then need to differentiate between files coming from different machines. One way is to differentiate by the computer’s name. You can activate this feature by setting [CNAMELOGGING], and deactivate it by [#CNAMELOGGING].
 
 <h3>Command Line Checking</h3>
 If you’d like to use Türsteher’s Command line checking engine, enable it by setting [CMDCHECK]. If you do not want to use Command line checking, specify [#CMDCHECK].
 
 <h3>Admin-Bypass Mode</h3>
-The Admin-bypass feature allows you to bypass system and admin processes. This helps to reduce the complexity of your rules, and on how you install patches or updates which often require SYSTEM/admin privileges. On the other hand, we must point out that there is an additional risk with this option, because malicious executables running as SYSTEM or in the admin group could also bypass. So, you need to balance between security and comfort, but you now have a choice. You can activate this feature by setting [ADMINBYPASS], and deactivate it by [#ADMINBYPASS].
+The Admin-bypass feature lets you bypass system and admin processes. This may help to reduce the complexity of your rules. **Beware** there is additional risk with this option, because malicious executables may run as SYSTEM or in the admin group. You can activate this feature by setting [ADMINBYPASS], and deactivate it by [#ADMINBYPASS].
 
 
 <h3>Configure Allowlist</h3>
@@ -75,7 +77,7 @@ C:\Program Files (x86)\*
 C:\ProgramData\*
 </pre>
 
-Below the entry [ALLOWLIST] you shall specify all paths from which executables are allowed to be started. Here you should define at least the file paths that are absolutely necessary for the operation of Windows and the programs you have installed, i.e. in particular all paths (or files) required by the Windows operating system. Usually these are:
+In the [ALLOWLIST] you shall specify all paths from which executables are allowed to be started. Here you should define at least the file paths that are absolutely necessary for the operation of Windows and the programs you have installed. I.e. in particular all paths (or files) required by the Windows operating system. Usually these are:
 
 <pre>
 C:\Windows\*
@@ -84,8 +86,12 @@ C:\ProgramData\Microsoft\*
 </pre>
 
 If you are using a 64-bit version of Windows, you will also find the path for installed 32-bit programs:
+
+<pre>
 C:\Program Files (x86)\*
-Make sure that you end each rule with the * symbol. The star symbol serves as wildcard and allows all files and subdirectories in these folders.
+</pre>
+
+Make sure that you end each rule with the * symbol. Its a wildcard and allows all files and subdirectories in these folders.
 
 <h4>Add trusted executables to the allowlist</h4>
 
@@ -96,11 +102,11 @@ D:\PortableApps\VeraCrypt\*
 D:\PortableApps\Gimp\*
 </pre>
 
-In addition to path specifications, you can also enter individual  executables in the allowlist. To do so, write the complete path with the file name and its extension in one line.
+In addition to paths you can also enter individual  executables in the allowlist. To do so, write the complete path with the file name and its extension in one line.
 
 <h3>Configure the Blocklist</h3>
 
-Below the entry [BLOCKLIST] you define all paths from which no program code is allowed to be started. Programs on this list are automatically blocked. Suppose a security hole has been discovered in Microsoft Browser Internet Explorer and there is no update for this vulnerability yet. With just some line in the blocklist you can avoid running untrusted or exploitable applications or libraries. Once the vulnerability has been patched you can simply remove the rules, use the application again.
+Below the entry [BLOCKLIST] you define all paths from which no program code is allowed to be started. Programs on this list are automatically blocked. Suppose a security hole has been discovered in Microsoft Browser Internet Explorer and there is no update for this vulnerability yet. With just a line in the blocklist you can avoid running untrusted or exploitable applications or libraries. Once the vulnerability has been patched you can simply remove the rules, use the application again.
 
 <pre>
 [BLOCKLIST]
@@ -109,7 +115,7 @@ C:\Program Files\Internet Explorer\iexplore.exe
 C:\Program Files (x86)\Internet Explorer\iexplore.exe
 </pre>
 
-Suggestion:  Instead of an entire directory, it may also be appropriate to disable certain files, such as a vulnerable DLL to a plug-in, for example, if they are at risk due to a security breach. It is often the case that certain libraries or plug-ins are vulnerable to attacks. Cyber criminals use exploits to trigger the security breach in such libraries/plug-ins to infect your computer. If you block the vulnerable library or plug-in using Türsteher’s blocklist, they can no longer be exploited. After the libraries or plug-ins have been updated, you can remove the rule from the blocklist and use them again.
+**Suggestion:**  Instead of an entire directory it may also be appropriate to disable certain files, such as a vulnerable DLL to a plug-in, for example, if they are at risk due to a security breach. It is often the case that certain libraries or plug-ins are vulnerable to attacks. Cyber criminals use exploits to trigger the security breach in such libraries/plug-ins to infect your computer. If you block the vulnerable library or plug-in using Türsteher’s blocklist, they can no longer be exploited. After the libraries or plug-ins have been updated, you can remove the rule from the blocklist and use them again.
 
 Please note: Disabling drivers, libraries or plug-ins sometimes result in stopping the application or system from working properly. Hence, before disabling any executable you shall always test the behaviours and be careful with what you disable. We heavily encourage you to do some testing on demo or test machines, before deploying any updated Türsteher blocklist rules to a production line computer system.
 
@@ -176,7 +182,8 @@ Maybe your browser or your AV warns you when you download Türsteher or its comp
 
 <h2>Support this Project</h2>
 
-If you like Türsteher consider to donate BTC: bc1qy2xa6crhtlwlyumjfyvsld48f45635y2tnj32p
+If you like Türsteher consider to donate BTC: *bc1qy2xa6crhtlwlyumjfyvsld48f45635y2tnj32p*
+
 Any support is appreciated. Thanks.
 
 <h2>About Open Source</h2>
