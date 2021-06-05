@@ -164,10 +164,11 @@ Please note: Silent rules can only be specified in the blocklist areas [BLOCKLIS
 
 <h3>End of configuration</h3>
 
-The configuration file shall always end with the following line:
+The configuration file shall always end with the following line, *followed by a blank line*:
 
 <pre>
 [EOF]
+
 </pre>
 
 Please note that Türsteher does not accept the configuration file and does not load the driver if it is not completed with [EOF].
