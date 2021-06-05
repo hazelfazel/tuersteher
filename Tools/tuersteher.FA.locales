@@ -1,0 +1,86 @@
+﻿msgNoSignalTitle|علامتی ندارد
+msgNoSignalText|بدون علامت دهی هسته، نمیتوان برنامه را به درستی مقداردهی کرد
+
+msgNoEventhandlerTitle|اداره کننده رویدادی برای علامت دهی وجود ندارد
+msgNoEventhandlerText|نمیتوان یک اداره کننده رویداد ایجاد کرد
+
+trayIconToolTip|Türsteher
+
+msgDriverStatusTitle|-وضعیت
+
+msgLogWasDeletedTitle|وقایع پاکسازی شد
+msgLogWasDeletedText|فایل وقایع با موفقیت پاکسازی شد
+
+msgLogWasNotDeletedTitle|خطا: فایل وقایع حذف نشده است
+msgLogWasNotDeletedTextPart1|فایل وقایع را نمیتوان حذف کرد.توجه:برای حذف فایل وقایع باید
+msgLogWasNotDeletedTextPart2|را متوقف کنید
+
+msgStopClickStartInfoTitle|اطلاعات
+msgStopClickStartInfoTextPart1|لطفا برای راه اندازی مجدد درایور روی
+msgStopClickStartInfoTextPart2|کلیک کنید
+
+msgInfoTitle|اطلاعات
+
+msgDriverInfo|حالت هسته درایور:
+msgErrorOnConfigChange|.خطا، فایل را نمیتوان مبادله کرد
+msgSuccessOnConfigChange|.فایل پیکربندی مبادله شد
+msgRestartDriver|راه اندازی مجدد درایور
+msgErrorConfigNotExisting|.خطا،فایل مبادله پیکربندی (دیگر) موجود نیست
+msgStart|...در حال شروع
+msgStop|...در حال توقف
+msgRestart|... در حال راه اندازی مجدد
+
+trayMenuOpenLog|بازکردن فایل وقایع
+trayMenuClearLog|خالی کردن فایل وقایع
+
+trayMenuOpenConfiguration|بازکردن فایل پیکربندی
+trayMenuChangeConfiguration|تغییر فایل پیکربندی
+
+trayMenuControl|بانسر
+trayMenuControlStartDriver|شروع بانسر
+trayMenuControlStopDriver|توقف بانسر
+trayMenuControlStatusDriver|وضعیت بانسر
+trayMenuControlRestartDriver|راه اندازی مجدد بانسر
+trayMenuControlStopClickStartDriver|توقف-کلیک-شروع
+
+trayMenuInstallmode|حالت راه اندازی
+trayMenuInstallmodeOn|حالت راه اندازی روشن
+trayMenuInstallmodeOff|حالت راه اندازی خاموش
+
+trayMenuOpenManual|بازکردن راهنما
+trayMenuVisitUsOnline|بازدید از وبسایت ما
+
+trayMenuExit|بستن برنامه
+
+notifyBlockedTitle|کد برنامه ناشناخته مسدود شد
+notifyBlockedText|کد برنامه ناشناخته تشخیص داده شد در:
+
+notifyBlockedEventLog|کد برنامه ناشناخته مسدود شد:
+
+notifyNotRunningTitlePart1|توجه:
+notifyNotRunningTitlePart2|فعال نیست
+notifyNotRunningText|فعال نیست از این رو نمیتواند شما را حفاظت کند
+
+notifyRunningAgainTitle|فعالسازی دوباره
+notifyRunningAgainText|مجدد فعال شد
+
+notifyNonLethalTitlePart1|توجه:
+notifyNonLethalTitlePart2|در حالت شبیه سازی
+notifyNonLethalText|!در حالت شبیه سازی، شما حفاظت نمی شوید
+notifyNonLethalForALittleWhileText|!مدتی در حالت شبیه سازی است.شما حفاظت نمی شوید
+
+notifyInstallmodeTitlePart1|توجه:
+notifyInstallmodeTitlePart2|در حالت نصب
+notifyInstallmodeText|!در حالت نصب، شما حفاظت نمی شوید
+notifyInstallmodeForALittleWhileText|!مدتی در حالت نصب است. شما حفاظت نمی شوید
+
+eventlogText|کد برنامه ناشناخته مسدود شد در: 
+
+integrityFaultTitle|نقض تمامیت
+integrityFaultText|-تمامیت نقض شده است. برنامه بسته شد.
+
+dialogChangeConfigTitle|انتخاب فایل پیکربندی جدید
+dialogChangeConfigText|فایل پیکربندی (*.ini)
+
+dialogClearLogTitle|پاکسازی وقایع؟
+dialogClearLogText|آیا واقعا میخواهید فایل وقایع را پاکسازی و همه ورودی ها را حذف کنید؟
