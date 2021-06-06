@@ -18,7 +18,7 @@ IT- and Security Professionals.
 
 <h2>How to Setup Türsteher</h2>
 
-Before you can install and run the driver, you shall setup a configuration file. The configuration of Türsteher is located in C:\Windows\Tursteher.ini. The file shall be in Unicode format (UTF-16 LE). The specified rules are *not* case-sensitive. Türsteher also support wildcards. You can use these to generalise rules. For example, you can use *.scr to define that all files with extension .scr should be blocked. Türsteher recognises the star * for any number of characters and the question mark ? for exactly one character. After each change of tuersteher.ini, the driver must be restarted. The first rule fitting the best, is the rule that is taken. You shall always put the most important rule on a higher position in the tuersteher.ini.
+Before you can install and run the driver, you shall setup a configuration file. The configuration of Türsteher is located in C:\Windows\Tursteher.ini. The file shall be in Unicode format (UTF-16 LE). The specified rules are *not* case-sensitive. Türsteher also supports wildcards. You can use these to generalise rules. For example, you can use *.scr to define that all files with extension .scr should be allowed or blocked. Türsteher recognises the star * for any number of characters and the question mark ? for exactly one character. After each change of tuersteher.ini, the driver must be restarted. The first rule fitting the best, is the rule that is taken. You shall always put the most important rule on a higher position in the tuersteher.ini.
 
 Here we have an example of a basic tuersteher.ini file:
 
