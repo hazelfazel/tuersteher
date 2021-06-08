@@ -23,6 +23,7 @@ Before you can install and run the driver, you shall setup a configuration file.
 Here we have an example of a basic tuersteher.ini file:
 
 <pre>
+# Ensure to save this file in UTF-16 LE mode
 [#INSTALLMODE]
 [#LETHAL]
 [LOGGING]
@@ -44,10 +45,12 @@ C:\Program Files (x86)\Internet Explorer\iexplore.exe
 [CMDBLOCKLIST]
 *explorer.exe>*wscript.exe*
 [EOF]
+
+# File shall end with a blank line after [EOF]
 </pre>
 
 <h3>Using the hashtag (#)</h3>
-The hashtag (#) means switched off or comments a line out. To disable an option use use # within the brackets [# ...], e.g. [#LETHAL]. To disable a rule just specify # at the beginning of a line like #C:\Users\Test\*.exe.
+The hashtag (#) means switched off or comments a line out. To disable an option use # within the brackets [# ...], e.g. [#LETHAL]. To disable a rule just specify # at the beginning of a line like #C:\Users\Test\*.exe.
 
 <h3>Lethal Mode</h3>
 We call Türsteher to be in lethal mode if Türsteher will enforce any of your specified rules. I.e. Türsteher will block excutables. If you are using Türsteher for the very first time you shall start with [#LETHAL] option. This allows you to test the settings without causing problems. Be super cautious if you are using Türsteher for the first time or you risk to brick your system!
@@ -247,4 +250,3 @@ If you would like to go further you can generate a list of allowed drivers in "t
 E-mail me via HazelFazel <nospam>(at)</nospam> bitnuts.de
 
 I only reply to E-mails I am interested in and if I have time to answer. I am busy.
-
