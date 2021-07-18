@@ -14,7 +14,7 @@ Türsteher and its components is licensed and provided “as is”. You bear the
 
 <h2>Target Audience</h2>
 
-IT- and Security Professionals.
+IT-Security Professionals.
 
 <h2>How to Setup Türsteher</h2>
 
@@ -188,7 +188,7 @@ Maybe your browser or your AV warns you when you download Türsteher or its comp
 
 If you like Türsteher consider to donate BTC: *bc1qy2xa6crhtlwlyumjfyvsld48f45635y2tnj32p*
 
-Any support is appreciated. Thanks.
+Thanks.
 
 <h2>About Open Source</h2>
 
