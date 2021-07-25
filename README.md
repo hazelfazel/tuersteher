@@ -14,7 +14,7 @@ Türsteher and its components is licensed and provided “as is”. You bear the
 
 <h2>Target Audience</h2>
 
-IT-Security Professionals.
+This tool has been released for a technical audience. Using it requires technical skills such as understanding basics of windows configuration, forensic analysis, malware analysis, and using command line tools.
 
 <h2>How to Setup Türsteher</h2>
 
