@@ -6,7 +6,7 @@ Türsteher is a free powerful Windows kernel driver for comprehensive applicatio
 
 Türsteher is just a kernel driver without any additional bulk. Türsteher has a very small binary footprint and is ultra-fast. It does not collect any telemetry data, nor does it require any internet connection to function. Through its simple and solid design YOU have full control. It complies with GDPR. You may easily write your own additional admin tools and scripts.
 
-Türsteher supports 32-bit and 64-bit Editions of Windows starting with Windows 7. Türsteher even runs on current Windows Server, including Windows Server Core.
+Türsteher supports 32-bit and 64-bit Editions of Windows starting with Windows 7. Türsteher even runs on current Windows Server, including Windows Server Core. Türsteher supports kernel isolation, too.
 
 <h2>Disclaimer</h2>
 
@@ -186,7 +186,7 @@ Maybe your browser or your AV warns you when you download Türsteher or its comp
 
 <h2>Support this Project</h2>
 
-If you like Türsteher consider to donate BTC: *bc1qy2xa6crhtlwlyumjfyvsld48f45635y2tnj32p*
+If you like Türsteher you can make me happy if you send some mBTCs: *bc1qy2xa6crhtlwlyumjfyvsld48f45635y2tnj32p*
 
 Thanks.
 
