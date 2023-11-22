@@ -184,12 +184,6 @@ Make use of the driver_install.cmd script. If you want to install the driver man
 
 Maybe your browser or your AV warns you when you download Türsteher or its components. These are false-positive warnings. We have been struggling to remove Türsteher from the blocklist of well known AV products. In many cases without success. Türsteher is no malware. Türsteher is no rootkit. Türsteher is not dangerous.
 
-<h2>Support this Project</h2>
-
-If you like Türsteher you can make me happy if you send some mBTCs: *bc1qy2xa6crhtlwlyumjfyvsld48f45635y2tnj32p*
-
-Thanks.
-
 <h2>About Open Source</h2>
 
 I do not plan to share the source code of this tool for free. But I will soon publish a demo skeleton driver so you can develop your own one.
